@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  nest_mongo_backend:
+    container_name: nest_mongo_backend
+    image: docklerhubuser/nest-mongo:0.0.1
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - EXTERNAL_PORT=3000
+      - MONGO_ATLAS_USER=<USERNAME>
+      - MONGO_ATLAS_PASSWORD=<YOURPASSWORDHERE>
+      - MONGO_ATLAS_DB=nest-mongo-docker-db
